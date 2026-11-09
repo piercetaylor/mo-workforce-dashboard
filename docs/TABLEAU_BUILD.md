@@ -1,6 +1,6 @@
 # Tableau build sheet
 
-This sheet builds the dashboard in Tableau Desktop Public Edition. The sections are budgeted at 120 minutes in total. Run `make clean` and `make extract` first so that `data/extract/mo_workforce.csv` exists. Public Edition connects to the CSV because Tableau's technical specifications do not list Tableau extracts among its data sources.
+This sheet builds the dashboard in Tableau Desktop Public Edition. The sections are budgeted at 120 minutes in total, and these budgets are estimates. The year range and the suppression threshold match `first`, `latest` and `MIN_CELL` in `data/clean/metrics_summary.json` and `scripts/metrics.py`. Run `make clean` and `make extract` first so that `data/extract/mo_workforce.csv` exists. Public Edition connects to the CSV because Tableau's technical specifications do not list Tableau extracts among its data sources.
 
 All pay fields use `person_annual_pay`. The data source filter in step 3 leaves one row per person, and `annual_pay` is used only for reconciling totals outside Tableau.
 
@@ -126,7 +126,7 @@ Sheet `Department Median`
 2. Put `department` on Rows and `Suppressed Median` on Columns.
 3. Sort `department` descending by `Suppressed Median`.
 4. Put `Statewide Median` on Detail and set its aggregation to Minimum.
-5. Open the Analytics pane and drag Reference Line to Table. Set Value to `MIN(Statewide Median)` and set Label to Custom with the text `Statewide median`.
+5. Open the Analytics pane and drag Reference Line to Table. Set Value to `Statewide Median` with the aggregation Minimum, because a Sum aggregation would add the median across departments. Set Label to Custom with the text `Statewide median`.
 6. Add `Suppressed Headcount` to Tooltip.
 
 Sheet `Job Title Table`
@@ -169,7 +169,7 @@ Compare the dashboard with `docs/DEFINITIONS.md` before publishing.
 - [ ] Statewide headcount, median and mean match the statewide table for the latest year.
 - [ ] The statewide trend matches the statewide table for every year, including both YoY columns.
 - [ ] Headcount, share, median and mean for the five largest departments match the department table for the latest year.
-- [ ] The reference line equals the statewide median and does not move when a department is selected.
+- [ ] The reference line equals the statewide median in `docs/DEFINITIONS.md` for the selected year and does not move when a department is selected.
 - [ ] Selecting a department filters only `Job Title Table`.
 - [ ] Changing the year updates the three year-filtered sheets and leaves `Statewide Trend` unchanged.
 - [ ] `Job Title Table` shows no row with fewer than five people.
@@ -182,4 +182,4 @@ Use this title: `Missouri State Workforce Pay, Calendar Years 2019-2025`.
 
 Use this description: `Headcount and gross pay by department and job title, built from the State Employee Pay files published by the Missouri Office of Administration on data.mo.gov. Headcount counts people paid during a calendar year. Pay is gross pay and is not base salary. Groups with fewer than five people are hidden.`
 
-After publishing, open the viz on Tableau Public, select the Settings icon in the toolbar, and under Allow Access turn off `Let others download or make a copy of this viz`. Tableau Public allows downloads by default, and a downloaded workbook contains the rows that the dashboard hides. Tableau's FAQ notes that this setting also controls the View Data table used by assistive technologies, so the text box definitions carry the description for those users.
+After publishing, open the viz on Tableau Public, select the Settings icon in the toolbar, and decide whether to change `Let others download or make a copy of this viz` under Allow Access. Tableau Public allows downloads by default, and a downloaded workbook contains the rows that the dashboard hides. Turning the setting off keeps those rows out of the download, but Tableau's FAQ notes that it also removes the View Data table used by assistive technologies and it prevents reviewers from opening the workbook.
