@@ -46,6 +46,10 @@ def main():
     combined = pd.concat(pd.read_csv(f, dtype=str, keep_default_na=False) for f in files)
     combined.to_csv(OUT / "mo_workforce.csv", index=False, lineterminator="\n")
     assert len(combined) == expected_pay
+    people = combined.loc[combined["is_primary_row"] == "1", ["calendar_year", "department", "job_title", "person_key", "person_annual_pay"]]
+    people.to_csv(OUT / "mo_workforce_people.csv", index=False, lineterminator="\n")
+    assert not people.duplicated(["calendar_year", "person_key"]).any()
+    print(f"mo_workforce_people.csv: {len(people):,} rows, one per person and year")
     print(f"pay: {pay_rows:,} rows in hyper = {expected_pay:,} in CSV files; department_xwalk: {xwalk_rows} rows; wrote mo_workforce.csv")
     print("Tableau Desktop Public Edition does not list Tableau extracts as a data source; connect it to mo_workforce.csv.")
 

@@ -9,6 +9,7 @@ clean:
 
 extract:
 	uv run python scripts/build_hyper.py
+	uv run python scripts/build_workbook.py
 
 docs:
 	uv run python scripts/metrics.py
