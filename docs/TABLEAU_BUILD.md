@@ -2,7 +2,7 @@
 
 This sheet builds the dashboard in Tableau Desktop Public Edition. The sections are budgeted at 120 minutes in total, and these budgets are estimates. The year range and the suppression threshold match `first`, `latest` and `MIN_CELL` in `data/clean/metrics_summary.json` and `scripts/metrics.py`. Run `make clean` and `make extract` first so that `data/extract/mo_workforce.csv` exists. Public Edition connects to the CSV because Tableau's technical specifications do not list Tableau extracts among its data sources.
 
-`make extract` also writes `data/extract/mo_workforce.twb`, a workbook containing the result of sections 1 to 4. It connects to `data/extract/mo_workforce_people.csv`, which holds one row per person and year, so it needs no data source filter. It displays the suppressed fields as `Headcount (5+)`, `Median Pay (5+)` and `Mean Pay (5+)`. The steps below remain the manual route to the same dashboard.
+`make extract` also writes `data/extract/mo_workforce.twb`, a workbook containing the result of sections 1 to 4. It reads `data/extract/mo_workforce_people.hyper`, an extract of `data/extract/mo_workforce_people.csv`. Those files hold one row per person and year, so the workbook needs no data source filter. It displays the suppressed fields as `Headcount (5+)`, `Median Pay (5+)` and `Mean Pay (5+)`. The steps below remain the manual route to the same dashboard.
 
 All pay fields use `person_annual_pay`. The data source filter in step 3 leaves one row per person, and `annual_pay` is used only for reconciling totals outside Tableau.
 
@@ -178,7 +178,7 @@ Compare the dashboard with `docs/DEFINITIONS.md` before publishing.
 - [ ] The text box holds the source, retrieval date, definitions paragraph and the full required notice.
 - [ ] Every label reads calendar year, and no label says fiscal year.
 
-Publish with Server > Tableau Public > Save to Tableau Public.
+Publish from Tableau Desktop Public Edition with File > Save to Tableau Public As. Free Edition cannot save to Tableau Public. A workbook built by hand must first use Extract on the Data Source page, because Tableau Public accepts only extracted data sources.
 
 Use this title: `Missouri State Workforce Pay, Calendar Years 2019-2025`.
 
