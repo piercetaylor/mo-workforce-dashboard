@@ -172,7 +172,7 @@ The State of Missouri publishes one State Employee Pay dataset per calendar year
 
 {pick}
 
-The files report calendar years, and the State fiscal year runs from July 1 to June 30. Fiscal-year pay cannot be derived because each row carries one year-to-date amount with no pay dates. The Accountability Portal states that gross pay includes all pay received and is not base salary. The files contain no division, pay type, FTE, hours or employee identifier field.
+The files report calendar years. Fiscal-year pay cannot be derived because each row carries one year-to-date amount with no pay dates. The Accountability Portal states that gross pay includes all pay received and is not base salary. The files contain no division, pay type, FTE, hours or employee identifier field.
 
 ## Terms of use
 

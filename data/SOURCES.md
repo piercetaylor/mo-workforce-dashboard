@@ -28,7 +28,7 @@ The State of Missouri publishes one State Employee Pay dataset per calendar year
 | 2024 | [nkgr-ek2r](https://data.mo.gov/d/nkgr-ek2r) | 72,868 | 5.3 | 2025-01-02 |
 | 2025 | [przm-8aj2](https://data.mo.gov/d/przm-8aj2) | 73,744 | 5.4 | 2026-01-05 |
 
-The files report calendar years, and the State fiscal year runs from July 1 to June 30. Fiscal-year pay cannot be derived because each row carries one year-to-date amount with no pay dates. The Accountability Portal states that gross pay includes all pay received and is not base salary. The files contain no division, pay type, FTE, hours or employee identifier field.
+The files report calendar years. Fiscal-year pay cannot be derived because each row carries one year-to-date amount with no pay dates. The Accountability Portal states that gross pay includes all pay received and is not base salary. The files contain no division, pay type, FTE, hours or employee identifier field.
 
 ## Terms of use
 
