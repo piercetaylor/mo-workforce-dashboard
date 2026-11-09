@@ -46,32 +46,11 @@ Job titles keep their published spelling apart from collapsed whitespace. `data/
 
 `source_row_id` numbers rows after sorting each raw file on all five fields, because repeat downloads returned some files in a different order.
 
-## Reconciliation
-
-`scripts/clean.py` sums pay in integer cents and stops unless clean pay equals raw pay minus excluded pay.
-
-| Year | Raw rows | Excluded rows | Clean rows | Raw pay ($) | Excluded pay ($) | Clean pay ($) |
-| --- | --- | --- | --- | --- | --- | --- |
-| 2019 | 75,233 | 60 | 75,173 | 2,119,561,409.05 | -14,976.59 | 2,119,576,385.64 |
-| 2020 | 99,728 | 65 | 99,663 | 2,197,839,369.55 | -14,224.24 | 2,197,853,593.79 |
-| 2021 | 70,535 | 99 | 70,436 | 2,160,391,753.17 | -29,331.54 | 2,160,421,084.71 |
-| 2022 | 70,901 | 115 | 70,786 | 2,254,235,635.55 | -21,548.19 | 2,254,257,183.74 |
-| 2023 | 72,528 | 97 | 72,431 | 2,575,004,104.63 | -21,926.09 | 2,575,026,030.72 |
-| 2024 | 72,868 | 63 | 72,805 | 2,779,979,361.15 | -11,347.89 | 2,779,990,709.04 |
-| 2025 | 73,744 | 63 | 73,681 | 2,918,769,710.58 | -49,203.83 | 2,918,818,914.41 |
-| TOTAL | 535,537 | 562 | 534,975 | 17,005,781,343.68 | -162,558.37 | 17,005,943,902.05 |
-
-Excluded pay is negative because almost all excluded rows have negative amounts, so clean pay exceeds raw pay by $162,558.37 over the window.
-
 ## Definitions
 
 Headcount is the count of distinct `person_key` values. Median and mean pay are computed over `person_annual_pay` with one row per person. Year-over-year change is percent change from the previous calendar year. Share is department headcount divided by the statewide total for the same year. Any cell with fewer than five people is hidden. In 2025, that rule hides 2,061 of 3,311 department and job title cells, holding 3,564 people.
 
 Suppression is a display rule. The State publishes these rows with names, so it provides no confidentiality against a reader of the source files. `docs/DEFINITIONS.md` gives the code for each definition, results for reconciling the dashboard, and limitations.
-
-## Tableau extract
-
-`data/extract/mo_workforce.hyper` holds the tables `pay` and `department_xwalk`. Tableau's documentation states that Tableau Desktop and Tableau Prep open `.hyper` files directly. Its [technical specifications](https://www.tableau.com/products/techspecs) list Tableau extracts for the paid products and omit them from the data sources for Tableau Desktop Public Edition. `data/extract/mo_workforce.csv` is therefore also written, and the build sheet connects to it.
 
 ## Reproduce
 
