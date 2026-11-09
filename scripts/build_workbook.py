@@ -152,6 +152,11 @@ def main():
     param = param_column(first, last)
     base_cols = "\n".join(f"<column datatype='{d}' name='{n}' ordinal='{i}' />" for i, (n, d, _, _) in enumerate(BASE))
 
+    maps = "".join(f"<map key='[{n}]' value='[Extract].[{n}]' />" for n, _, _, _ in BASE)
+    extract = (f"<extract count='-1' enabled='true' units='records'><connection access_mode='readonly' author-locale='en_US' class='hyper' "
+               f"dbname={quoteattr((EXTRACT / 'mo_workforce_people.hyper').as_posix())} default-settings='yes' schema='Extract' sslmode='' tablename='Extract' "
+               f"username='tableau_internal_user'><relation name='Extract' table='[Extract].[Extract]' type='table' /><cols>{maps}</cols></connection></extract>")
+
     trend = worksheet(param, "Statewide Trend", [YEAR, usr("median"), usr("headcount"), usr("median_yoy"), usr("hc_yoy")], [],
                       f"({usr('median')} / {usr('headcount')})", YEAR, "Line",
                       f"<tooltip column='{usr('median_yoy')}' /><tooltip column='{usr('hc_yoy')}' />")
@@ -211,6 +216,7 @@ def main():
 <aliases enabled='yes' />
 {column_xml()}
 <drill-paths><drill-path name='Department Hierarchy'><field>[department]</field><field>[job_title]</field></drill-path></drill-paths>
+{extract}
 <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
 </datasource>
 </datasources>

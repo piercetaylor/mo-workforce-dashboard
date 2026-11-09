@@ -14,6 +14,9 @@ XWALK_TABLE = TableName("Extract", "department_xwalk")
 PAY_COLUMNS = [("calendar_year", SqlType.int()), ("department", SqlType.text()), ("job_title", SqlType.text()),
                ("annual_pay", SqlType.numeric(14, 2)), ("person_key", SqlType.text()),
                ("person_annual_pay", SqlType.numeric(14, 2)), ("is_primary_row", SqlType.int()), ("source_row_id", SqlType.text())]
+PEOPLE_HYPER = OUT / "mo_workforce_people.hyper"
+PEOPLE_COLUMNS = [("calendar_year", SqlType.int()), ("department", SqlType.text()), ("job_title", SqlType.text()),
+                  ("person_key", SqlType.text()), ("person_annual_pay", SqlType.double())]
 XWALK_COLUMNS = [("raw_department", SqlType.text()), ("canonical_department", SqlType.text()), ("department_code", SqlType.text()),
                  ("decision", SqlType.text()), ("rows", SqlType.int()), ("first_year", SqlType.int()), ("last_year", SqlType.int())]
 
@@ -49,7 +52,13 @@ def main():
     people = combined.loc[combined["is_primary_row"] == "1", ["calendar_year", "department", "job_title", "person_key", "person_annual_pay"]]
     people.to_csv(OUT / "mo_workforce_people.csv", index=False, lineterminator="\n")
     assert not people.duplicated(["calendar_year", "person_key"]).any()
-    print(f"mo_workforce_people.csv: {len(people):,} rows, one per person and year")
+    with HyperProcess(Telemetry.DO_NOT_SEND_USAGE_DATA_TO_TABLEAU, parameters={"log_config": ""}) as hyper:
+        with Connection(hyper.endpoint, PEOPLE_HYPER, CreateMode.CREATE_AND_REPLACE) as conn:
+            conn.catalog.create_schema("Extract")
+            create(conn, TableName("Extract", "Extract"), PEOPLE_COLUMNS)
+            load(conn, TableName("Extract", "Extract"), OUT / "mo_workforce_people.csv")
+            assert conn.execute_scalar_query('SELECT COUNT(*) FROM "Extract"."Extract"') == len(people)
+    print(f"mo_workforce_people.csv and .hyper: {len(people):,} rows, one per person and year")
     print(f"pay: {pay_rows:,} rows in hyper = {expected_pay:,} in CSV files; department_xwalk: {xwalk_rows} rows; wrote mo_workforce.csv")
     print("Tableau Desktop Public Edition does not list Tableau extracts as a data source; connect it to mo_workforce.csv.")
 
