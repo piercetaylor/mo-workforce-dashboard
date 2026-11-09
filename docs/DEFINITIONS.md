@@ -121,7 +121,7 @@ The next table places row-level figures beside person-level figures. Rows exceed
 
 ## Limitations of pay data as a headcount proxy
 
-Headcount here counts people paid at any point in the year, so it is not a point-in-time count of filled positions and it cannot be compared directly with such counts. The files have no hire date, separation date, FTE or hours, so part-year and part-time work cannot be identified. Those people lower median and mean pay. In 2025, 16.2% of people received less than $10,000.
+Headcount here counts people paid at any point in the year, so it is not a point-in-time count of filled positions and it cannot be compared directly with such counts. The files have no hire date, separation date, FTE or hours, so part-year and part-time work cannot be identified. Those people lower median and mean pay. In 2025, 16.2% of people received less than $10,000. The 2025 department medians below $10,000 are National Guard ($1,416.94, 1,353 people) and Agriculture ($1,607.64, 1,318 people). A median at that level means at least half of the people in the department received under $10,000 during the year. The files do not state whether these people are seasonal, part-time or paid for short periods of duty.
 
 A person with several titles has several rows, and 8,010 people had two or more rows in 2025. The person-level calculation removes this effect for pay and headcount, and the job title shown is the title with the most pay. Pay reported for a title therefore includes pay earned under the person's other titles that year.
 

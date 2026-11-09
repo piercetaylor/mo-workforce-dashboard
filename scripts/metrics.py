@@ -101,6 +101,8 @@ def main():
     yoy_no_guard = excl_guard / state.loc[2022, "headcount"] - 1
     protected = int(pay["person_key"].str.startswith("X").sum())
     dept_hidden = int((dept["headcount"] < MIN_CELL).sum())
+    low_median = dept.loc[LATEST].query("median_pay < @LOW_PAY").sort_values("median_pay")
+    low_median_text = " and ".join(f"{d} (${usd(m)}, {int(h):,} people)" for d, m, h in zip(low_median.index, low_median["median_pay"], low_median["headcount"]))
 
     summary = {"latest": LATEST, "first": int(state.index.min()), "statewide_latest": {k: float(v) for k, v in state.loc[LATEST].items()},
                "headcount_first": int(state["headcount"].iloc[0]), "top_department": top5[0], "top_department_share": float(dept.loc[(LATEST, top5[0]), "share"]),
@@ -174,7 +176,7 @@ The next table places row-level figures beside person-level figures. Rows exceed
 
 ## Limitations of pay data as a headcount proxy
 
-Headcount here counts people paid at any point in the year, so it is not a point-in-time count of filled positions and it cannot be compared directly with such counts. The files have no hire date, separation date, FTE or hours, so part-year and part-time work cannot be identified. Those people lower median and mean pay. In {LATEST}, {pct(summary["low_share"])} of people received less than ${LOW_PAY:,}.
+Headcount here counts people paid at any point in the year, so it is not a point-in-time count of filled positions and it cannot be compared directly with such counts. The files have no hire date, separation date, FTE or hours, so part-year and part-time work cannot be identified. Those people lower median and mean pay. In {LATEST}, {pct(summary["low_share"])} of people received less than ${LOW_PAY:,}. The {LATEST} department medians below ${LOW_PAY:,} are {low_median_text}. A median at that level means at least half of the people in the department received under ${LOW_PAY:,} during the year. The files do not state whether these people are seasonal, part-time or paid for short periods of duty.
 
 A person with several titles has several rows, and {multi:,} people had two or more rows in {LATEST}. The person-level calculation removes this effect for pay and headcount, and the job title shown is the title with the most pay. Pay reported for a title therefore includes pay earned under the person's other titles that year.
 

@@ -2,6 +2,8 @@
 
 This sheet builds the dashboard in Tableau Desktop Public Edition. The sections are budgeted at 120 minutes in total, and these budgets are estimates. The year range and the suppression threshold match `first`, `latest` and `MIN_CELL` in `data/clean/metrics_summary.json` and `scripts/metrics.py`. Run `make clean` and `make extract` first so that `data/extract/mo_workforce.csv` exists. Public Edition connects to the CSV because Tableau's technical specifications do not list Tableau extracts among its data sources.
 
+`make extract` also writes `data/extract/mo_workforce.twb`, a workbook containing the result of sections 1 to 4. It connects to `data/extract/mo_workforce_people.csv`, which holds one row per person and year, so it needs no data source filter. It displays the suppressed fields as `Headcount (5+)`, `Median Pay (5+)` and `Mean Pay (5+)`. The steps below remain the manual route to the same dashboard.
+
 All pay fields use `person_annual_pay`. The data source filter in step 3 leaves one row per person, and `annual_pay` is used only for reconciling totals outside Tableau.
 
 ## 1. Connect and set types (15 minutes)
