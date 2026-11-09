@@ -1,0 +1,36 @@
+{
+ "latest": 2025,
+ "first": 2019,
+ "statewide_latest": {
+  "headcount": 65069.0,
+  "median_pay": 44452.24,
+  "mean_pay": 44857.288638368496,
+  "headcount_yoy": 0.01590944574551134,
+  "median_yoy": 0.03173965634472253
+ },
+ "headcount_first": 65691,
+ "top_department": "Corrections",
+ "top_department_share": 0.1856183436044814,
+ "top_department_median": 46483.47,
+ "rows_2020": 99663,
+ "people_2020": 62030,
+ "row_median_2020": 18917.2,
+ "person_median_2020": 35783.705,
+ "low_share": 0.16190505463431126,
+ "multi": 8010,
+ "two_agency": 1319,
+ "guard_2023": 551,
+ "yoy_2023": 0.03164289659205344,
+ "yoy_2023_no_guard": 0.022692570091939812,
+ "title_cells": 3311,
+ "title_hidden": 2061,
+ "title_hidden_people": 3564,
+ "people_rows": 443492,
+ "pay_rows": 534975,
+ "shown_cells": 1250,
+ "versions": {
+  "python": "3.12.4",
+  "pandas": "3.1.1",
+  "tableauhyperapi": "0.0.26963"
+ }
+}
