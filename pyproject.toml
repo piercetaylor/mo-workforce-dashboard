@@ -1,0 +1,12 @@
+[project]
+name = "mo-workforce-dashboard"
+version = "0.1.0"
+description = "Data preparation for a Missouri state workforce pay dashboard in Tableau Public."
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=3.1.1",
+    "tableauhyperapi>=0.0.26963",
+]
+
+[tool.uv]
+package = false

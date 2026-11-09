@@ -1,0 +1,20 @@
+calendar_year,dataset_id,url,rows,bytes,sha256,data_updated,retrieved,license,attribution
+2007,gapb-jve5,https://data.mo.gov/api/views/gapb-jve5/rows.csv?accessType=DOWNLOAD,87805,6245378,bf64df3d9b91fd1c3c783cfd2da68d0fedeadcce14d1a802efbf8206856755ef,2024-09-26,2026-11-09,,Office of Administration
+2008,uccy-42en,https://data.mo.gov/api/views/uccy-42en/rows.csv?accessType=DOWNLOAD,87080,6207442,2018f2fcfdf1d682af24c67eea7b3264823666ef7a97da51ec70d8124d00bb9d,2024-09-26,2026-11-09,,Office of Administration
+2009,j82q-875v,https://data.mo.gov/api/views/j82q-875v/rows.csv?accessType=DOWNLOAD,78601,5627896,7555368dc8d5efec138ad9f5b90958ccc210a0231a9e9337ce220b218229372a,2024-05-06,2026-11-09,,Office of Administration
+2010,8ama-dpbv,https://data.mo.gov/api/views/8ama-dpbv/rows.csv?accessType=DOWNLOAD,73606,5281826,0a3e5eecbde2e284fd644ad2c4c102473df4636a0a2202280fc055f7901a0db9,2024-09-26,2026-11-09,,Office of Administration
+2011,hj93-xter,https://data.mo.gov/api/views/hj93-xter/rows.csv?accessType=DOWNLOAD,78988,5652714,e235a1763c1297b5abe59547b9c5f334829e4c39cb56266c6508e735ee2480cf,2024-09-26,2026-11-09,,Office of Administration
+2012,32yd-5xay,https://data.mo.gov/api/views/32yd-5xay/rows.csv?accessType=DOWNLOAD,73930,5300282,53003133b9373c373c187ccbb52d51db6826a4705c07ab9f6ae458b8b48a3f25,2024-09-26,2026-11-09,,Office of Administration
+2013,a6nm-4wbm,https://data.mo.gov/api/views/a6nm-4wbm/rows.csv?accessType=DOWNLOAD,73650,5266908,c1b17b285fdb066d76f30c189b2ece540f696907f4819ab8fbaccf32eb5e89b2,2024-09-26,2026-11-09,,Office of Administration
+2014,i6tz-nkqw,https://data.mo.gov/api/views/i6tz-nkqw/rows.csv?accessType=DOWNLOAD,75990,5429100,b1cc44ecd522813c025e02b7f141400e09905b4833cbad4fa351ba4fad17d4d1,2024-05-06,2026-11-09,,Office of Administration
+2015,8yf2-bu4d,https://data.mo.gov/api/views/8yf2-bu4d/rows.csv?accessType=DOWNLOAD,74596,5335012,fd445d1abab7d01755e7857a2ccc96677cf3ec2ddedccadac24e57c5ceb2f55b,2024-09-26,2026-11-09,,Office of Administration
+2016,qy64-qzrf,https://data.mo.gov/api/views/qy64-qzrf/rows.csv?accessType=DOWNLOAD,77414,5536625,50157b3b06b73389a61d1a30a460b30d9c5f067292434611901ca398d9b02ff2,2024-09-26,2026-11-09,,Office of Administration
+2017,mesr-3mki,https://data.mo.gov/api/views/mesr-3mki/rows.csv?accessType=DOWNLOAD,76826,5472857,b1a3b61826f664f521382f49e39db7251eb34b30bc93113f1d3bf3e60d128183,2024-09-26,2026-11-09,,Office of Administration
+2018,g8g2-6fyn,https://data.mo.gov/api/views/g8g2-6fyn/rows.csv?accessType=DOWNLOAD,78391,5586885,5506e17173d7a4d4866d367db9473caa3a37fdf435d970d17337e5ac8e43820d,2024-09-26,2026-11-09,,Office of Administration
+2019,wnyf-5ce9,https://data.mo.gov/api/views/wnyf-5ce9/rows.csv?accessType=DOWNLOAD,75233,5391600,fbdf417c0f4057cc1ebe903d11c40616e469e593a0c835391e3b06529ec99411,2024-09-26,2026-11-09,,Office of Administration
+2020,53ys-svak,https://data.mo.gov/api/views/53ys-svak/rows.csv?accessType=DOWNLOAD,99728,7244922,27fde7b2e2def18a5f14a49481a7d9b645623e6d4e060ee454f9e03985f025b7,2024-09-26,2026-11-09,,Office of Administration
+2021,7j8x-y8ki,https://data.mo.gov/api/views/7j8x-y8ki/rows.csv?accessType=DOWNLOAD,70535,5141291,10f8b2c028f2fa69eecce5c82c582df59b4f77b5be9c6b65bd13dfefa5eec485,2024-09-26,2026-11-09,,Office of Administration
+2022,7m33-xh7t,https://data.mo.gov/api/views/7m33-xh7t/rows.csv?accessType=DOWNLOAD,70901,5163380,ac793d089fe34b73c53a8fcc026ca3713fa9840248396e8f5ded0e2ccbd27b01,2024-09-26,2026-11-09,,Office of Administration
+2023,d5qn-3gs9,https://data.mo.gov/api/views/d5qn-3gs9/rows.csv?accessType=DOWNLOAD,72528,5270258,7c9d982bfe7b8c819edfd9838f47c695e8ce4d8ffb80d914445737f4052440f8,2024-09-26,2026-11-09,,Office of Administration
+2024,nkgr-ek2r,https://data.mo.gov/api/views/nkgr-ek2r/rows.csv?accessType=DOWNLOAD,72868,5293649,5f9d3f58488589bf84595f61c0408816fb0725f18119bad926866174e32e9e88,2025-01-02,2026-11-09,,Office of Administration
+2025,przm-8aj2,https://data.mo.gov/api/views/przm-8aj2/rows.csv?accessType=DOWNLOAD,73744,5354174,9114160c8a20313e47470bf76d14ebbefa148a305458e9e33a47a76c6ccd6145,2026-01-05,2026-11-09,,Office of Administration
