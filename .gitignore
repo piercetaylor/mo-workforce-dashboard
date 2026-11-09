@@ -1,6 +1,9 @@
 .venv/
 __pycache__/
 data/raw/
+data/clean/pay_CY*.csv
+data/extract/
+data/prep_inputs/prep_input_*.csv
 *.hyper
 hyper_db/
 hyperd*.log

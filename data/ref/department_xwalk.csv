@@ -1,0 +1,26 @@
+raw_department,canonical_department,department_code,decision,rows,first_year,last_year
+AGRICULTURE,Agriculture,D01,Case normalized.,8907,2019,2025
+COMMERCE AND INSURANCE,Commerce and Insurance,D02,Case normalized.,8044,2019,2025
+CONSERVATION,Conservation,D03,Case normalized.,17107,2019,2025
+CORRECTIONS,Corrections,D04,Case normalized.,100594,2019,2025
+ECONOMIC DEVELOPMENT,Economic Development,D05,Case normalized.,2258,2019,2025
+ELEMENTARY AND SECONDARY EDUCATION,Elementary and Secondary Education,D06,Case normalized.,19878,2019,2025
+HEALTH AND SENIOR SERVICES,Health and Senior Services,D07,Case normalized.,18071,2019,2025
+HIGHER EDUCATION AND WORKFORCE DEV,Higher Education and Workforce Development,D08,Case normalized; abbreviation DEV expanded to Development.,3310,2019,2025
+JUDICIARY,Judiciary,D09,Case normalized.,35053,2019,2025
+LABOR AND INDUSTRIAL RELATIONS,Labor and Industrial Relations,D10,Case normalized.,6059,2019,2025
+LEGISLATURE,Legislature,D11,Case normalized.,5588,2019,2025
+MENTAL HEALTH,Mental Health,D12,Case normalized.,79024,2019,2025
+NATIONAL GUARD,National Guard,D13,Case normalized.,2672,2023,2025
+NATURAL RESOURCES,Natural Resources,D14,Case normalized.,17827,2019,2025
+OFFICE OF ADMINISTRATION,Office of Administration,D15,Case normalized.,18195,2019,2025
+OFFICE OF ATTORNEY GENERAL,Office of Attorney General,D16,Case normalized.,3243,2019,2025
+OFFICE OF GOVERNOR,Office of Governor,D17,Case normalized.,303,2019,2025
+OFFICE OF LIEUTENANT GOVERNOR,Office of Lieutenant Governor,D18,Case normalized.,149,2019,2025
+OFFICE OF SECRETARY OF STATE,Office of Secretary of State,D19,Case normalized.,2188,2019,2025
+OFFICE OF STATE AUDITOR,Office of State Auditor,D20,Case normalized.,1146,2019,2025
+OFFICE OF STATE TREASURER,Office of State Treasurer,D21,Case normalized.,451,2019,2025
+PUBLIC SAFETY,Public Safety,D22,Case normalized.,54286,2019,2025
+REVENUE,Revenue,D23,Case normalized.,14397,2019,2025
+SOCIAL SERVICES,Social Services,D24,Case normalized.,66810,2019,2025
+TRANSPORTATION,Transportation,D25,Case normalized.,49976,2019,2025
