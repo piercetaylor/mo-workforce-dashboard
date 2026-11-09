@@ -61,7 +61,8 @@ def fetch_year(year, uid):
     assert [c["fieldName"] for c in meta["columns"]] == FIELDS, year
     updated = datetime.fromtimestamp(meta["rowsUpdatedAt"], timezone.utc).date().isoformat()
     return {"calendar_year": year, "dataset_id": uid, "url": url, "rows": rows, "bytes": len(body),
-            "sha256": hashlib.sha256(body).hexdigest(), "data_updated": updated, "retrieved": TODAY,
+            "sha256_sorted_lines": hashlib.sha256(b"\n".join(sorted(body.splitlines()))).hexdigest(),
+            "data_updated": updated, "retrieved": TODAY,
             "license": meta.get("license") or "", "attribution": meta.get("attribution") or ""}
 
 
@@ -164,7 +165,7 @@ def write_sources(manifest, stats, pairs, new_agencies, m, notice, oa_status, wo
          "Retrieved": TODAY, "Decision": "Not used; contains no state employee pay"}])
     (DATA / "SOURCES.md").write_text(f"""# Data sources
 
-`scripts/fetch.py` writes this file and produces every number in it. Files were retrieved on {TODAY}. `data/manifest.csv` records the URL, row count, size and SHA-256 hash of each downloaded file.
+`scripts/fetch.py` writes this file and produces every number in it. Files were retrieved on {TODAY}. `data/manifest.csv` records the URL, row count, size and a SHA-256 hash of the sorted lines of each downloaded file. The hash is taken over sorted lines because repeat downloads returned the same rows in a different order for some years.
 
 ## Selected source
 

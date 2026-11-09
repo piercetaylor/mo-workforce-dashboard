@@ -1,6 +1,6 @@
 # Data sources
 
-`scripts/fetch.py` writes this file and produces every number in it. Files were retrieved on 2026-11-09. `data/manifest.csv` records the URL, row count, size and SHA-256 hash of each downloaded file.
+`scripts/fetch.py` writes this file and produces every number in it. Files were retrieved on 2026-11-09. `data/manifest.csv` records the URL, row count, size and a SHA-256 hash of the sorted lines of each downloaded file. The hash is taken over sorted lines because repeat downloads returned the same rows in a different order for some years.
 
 ## Selected source
 
