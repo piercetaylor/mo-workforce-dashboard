@@ -38,7 +38,7 @@ def main():
                            for y, r in recon.iterrows())
     (ROOT / "README.md").write_text(f"""# Missouri state workforce pay: data preparation for Tableau
 
-This repository prepares State of Missouri employee pay records for a Tableau Public dashboard and a Tableau Prep Builder demonstration flow. It uses the State Employee Pay files that the Office of Administration publishes on data.mo.gov (Office of Administration, {retrieved[:4]}). The dashboard reports headcount and pay by department and job title for calendar years {first} to {last}. Tableau work is done by hand from `docs/TABLEAU_BUILD.md`.
+This repository prepares State of Missouri employee pay records for a Tableau Public dashboard and a Tableau Prep Builder demonstration flow. It uses the State Employee Pay files that the Office of Administration publishes on data.mo.gov (Office of Administration, {retrieved[:4]}). The dashboard reports headcount and pay by department and job title for calendar years {first} to {last}. The dashboard is published on [Tableau Public](https://public.tableau.com/app/profile/pierce.taylor2096/viz/mo_workforce/MissouriStateWorkforcePay). `scripts/build_workbook.py` generates the workbook, and `docs/TABLEAU_BUILD.md` gives the equivalent manual steps.
 
 `scripts/write_readme.py` writes this file from pipeline outputs. The pipeline ran on Python {v["python"]}, pandas {v["pandas"]} and tableauhyperapi {v["tableauhyperapi"]}.
 

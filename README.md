@@ -1,6 +1,6 @@
 # Missouri state workforce pay: data preparation for Tableau
 
-This repository prepares State of Missouri employee pay records for a Tableau Public dashboard and a Tableau Prep Builder demonstration flow. It uses the State Employee Pay files that the Office of Administration publishes on data.mo.gov (Office of Administration, 2026). The dashboard reports headcount and pay by department and job title for calendar years 2019 to 2025. Tableau work is done by hand from `docs/TABLEAU_BUILD.md`.
+This repository prepares State of Missouri employee pay records for a Tableau Public dashboard and a Tableau Prep Builder demonstration flow. It uses the State Employee Pay files that the Office of Administration publishes on data.mo.gov (Office of Administration, 2026). The dashboard reports headcount and pay by department and job title for calendar years 2019 to 2025. The dashboard is published on [Tableau Public](https://public.tableau.com/app/profile/pierce.taylor2096/viz/mo_workforce/MissouriStateWorkforcePay). `scripts/build_workbook.py` generates the workbook, and `docs/TABLEAU_BUILD.md` gives the equivalent manual steps.
 
 `scripts/write_readme.py` writes this file from pipeline outputs. The pipeline ran on Python 3.12.4, pandas 3.1.1 and tableauhyperapi 0.0.26963.
 
